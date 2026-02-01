@@ -1,0 +1,8 @@
+
+{
+  "name": "Cinematic Studio Experience",
+  "description": "A high-end, WebGL-powered creative studio website inspired by Dogstudio, featuring cinematic scroll animations, immersive 3D scenes, and editorial typography.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

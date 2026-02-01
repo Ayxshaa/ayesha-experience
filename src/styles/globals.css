@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+@import 'tailwindcss';
+
+@layer base {
+  body {
+    @apply bg-black text-white overflow-x-hidden;
+    font-family: 'Inter', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  canvas {
+    touch-action: none;
+  }
+}
+
+@layer components {
+  .font-syncopate {
+    font-family: 'Syncopate', sans-serif;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+  }
+
+  .clip-text {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+@layer utilities {
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-black;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-700 rounded;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+}
+
+canvas {
+  touch-action: none;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Text Effects */
+.text-outline {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+  color: transparent;
+}
+
+.clip-text {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* Utility Classes */
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.pointer-events-auto {
+  pointer-events: auto;
+}
