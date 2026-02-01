@@ -15,7 +15,7 @@ A high-end, WebGL-powered creative studio website featuring cinematic scroll ani
 
 ## Project Structure
 
-See [FOLDER_STRUCTURE.md](./FOLDER_STRUCTURE.md) for detailed folder organization and conventions.
+See  for detailed folder organization and conventions.
 
 ```
 src/
@@ -35,85 +35,6 @@ tests/
 ├── integration/      # Integration tests
 └── __mocks__/        # Mock utilities
 ```
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm 9+
-
-### Installation
-
-1. Clone the repository
-```bash
-git clone <repository-url>
-cd ayesha-experience
-```
-
-2. Install dependencies
-```bash
-npm install
-```
-
-3. Set up environment variables (if needed)
-```bash
-cp .env.example .env.local
-```
-
-### Development
-
-Start the development server:
-```bash
-npm run dev
-```
-
-The app will be available at `http://localhost:3000`
-
-### Building
-
-Build for production:
-```bash
-npm run build
-```
-
-Preview the production build:
-```bash
-npm run preview
-```
-
-## Scripts
-
-### Development & Building
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-
-### Testing
-- `npm test` - Run tests in watch mode
-- `npm run test:ui` - Run tests with UI dashboard
-- `npm run test:coverage` - Generate coverage report
-
-### Code Quality
-- `npm run lint` - Check for linting issues
-- `npm run lint:fix` - Auto-fix linting issues
-- `npm run format` - Format code with Prettier
-- `npm run type-check` - Check TypeScript types
-
-## Components
-
-### Pages/Sections
-- **Hero** - Landing section with animated intro text
-- **About** - Philosophy and background
-- **Experience** - Capabilities and work experience
-- **Cases** - Project showcase with interactive cards
-- **Navigation** - Top navigation bar with smooth scrolling
-- **SoundToggle** - Sound control button
-- **Loader** - Loading animation screen
-- **Footer** - Footer section
-
-### 3D Scene
-- **Scene** - Three.js WebGL scene with camera controls, lighting, and particles
 
 ## Key Features
 
@@ -159,23 +80,6 @@ npm test                # Watch mode
 npm run test:coverage   # With coverage report
 ```
 
-## Production Checklist
-
-- [x] Proper folder structure
-- [x] TypeScript strict mode
-- [x] ESLint configuration
-- [x] Prettier formatting
-- [x] Unit and integration tests
-- [x] Custom hooks extracted
-- [x] React Context for state management
-- [x] Utility functions organized
-- [x] Global styles separated
-- [x] Path aliases configured
-- [x] Barrel exports for clean imports
-- [x] .gitignore configured
-- [x] Build optimization
-- [x] Production-ready Tailwind CSS (not CDN)
-
 ## Performance Optimization
 
 ### Current Optimizations
@@ -199,43 +103,9 @@ npm run test:coverage   # With coverage report
 - Safari 14+
 - Mobile browsers (iOS Safari 14+, Android Chrome 90+)
 
-## Environment Variables
-
-Currently, the app can use the following environment variables:
-- `GEMINI_API_KEY` - For any AI-related features (optional)
-
-## Contributing
-
-1. Follow the folder structure guidelines
-2. Use TypeScript for type safety
-3. Write tests for new features
-4. Run linting before committing
-```bash
-npm run lint:fix
-npm run format
-npm test
-```
-
-## Deployment
-
-### Vercel
-```bash
-vercel
-```
-
-### Netlify
-```bash
-npm run build
-# Upload dist/ folder
-```
-
-### Other Platforms
-1. Run `npm run build`
-2. Deploy the `dist/` folder
 
 ## Documentation
 
-- [Folder Structure](./FOLDER_STRUCTURE.md) - Detailed folder organization
 - [GSAP Documentation](https://gsap.com/docs)
 - [Three.js Documentation](https://threejs.org/docs)
 - [React Three Fiber](https://docs.pmnd.rs/react-three-fiber)
@@ -245,10 +115,6 @@ npm run build
 ## License
 
 This project is licensed under the MIT License.
-
-## Support
-
-For issues or questions, please create an issue in the repository or contact the development team.
 
 ---
 
