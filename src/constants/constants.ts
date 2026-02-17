@@ -19,7 +19,7 @@ export const PROJECTS: Project[] = [
     ],
     theme: '#6b21a8', // Purple
     color: '#a855f7',
-    deployedLink: 'https://ayeshashhh.netlify.app/',
+    deployedLink: 'https://ayeshaportfoliooo.netlify.app/',
     githubLink: 'https://github.com/Ayxshaa/portfolio-ash'
   },
   {
