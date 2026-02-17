@@ -39,3 +39,26 @@ yarn-error.log*
 .cache/
 temp/
 tmp/
+
+# Sensitive files (extra precaution)
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+credentials.json
+secrets.json
+
+# Vercel
+.vercel
+.vercel.json
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE personal settings
+.vscode/settings.json
+.vscode/extensions.json
+.idea/workspace.xml
+.idea/tasks.xml
