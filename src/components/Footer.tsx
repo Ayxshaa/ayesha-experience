@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
             READY TO MAKE <br className="hidden sm:block" /> GOOD ART?
           </h2>
           <a href="mailto:hello@studio.com" className="block text-base md:text-lg font-light hover:underline opacity-60 hover:opacity-100 transition-opacity">
-            hello@studio.com
+           https://ayeshashhh.netlify.app/
           </a>
         </div>
 
