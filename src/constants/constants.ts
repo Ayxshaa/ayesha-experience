@@ -6,12 +6,14 @@ export const SOCIAL_LINKS = {
   github: 'https://github.com/Ayxshaa',
 };
 
+export const PROJECT_CATEGORIES = ['Frontend', '3D', 'AI Design'] as const;
+
 export const PROJECTS: Project[] = [
   {
     id: 'tomorrowland',
     title: 'Portfolio',
     year: '2025',
-    category: 'Web Experience',
+    category: '3D',
     description: [
       'Building a 3D portfolio',
       'inspired by moon and jazz,',
@@ -26,7 +28,7 @@ export const PROJECTS: Project[] = [
     id: 'A4 Zone',
     title: 'A4 Zone',
     year: '2025',
-    category: 'Strategy',
+    category: 'Frontend',
     description: [
       'Chat with three smart modes,',
       'get personalized suggestions,',
@@ -41,7 +43,7 @@ export const PROJECTS: Project[] = [
     id: 'FlowEvent',
     title: 'FlowEvent',
     year: '2025',
-    category: 'Design Systems',
+    category: 'Frontend',
     description: [
       'Building a dynamic platform',
       'for managing and exploring,',
@@ -56,7 +58,7 @@ export const PROJECTS: Project[] = [
     id: 'urGallery',
     title: 'URGALLERY',
     year: '2025',
-    category: 'Digital Art',
+    category: '3D',
     description: [
       'A 3D gallery space',
       'showcasing interactive art,',
@@ -66,5 +68,18 @@ export const PROJECTS: Project[] = [
     color: '#ef4444',
     deployedLink: 'https://ayxshaa.github.io/VideoGallery/',
     githubLink: 'https://github.com/Ayxshaa/VideoGallery'
+  },
+  {
+    id: 'ai-design-demo',
+    title: 'AI Design Demo',
+    year: '2025',
+    category: 'AI Design',
+    description: [
+      'Placeholder for AI-assisted',
+      'design work — details',
+      'coming soon'
+    ],
+    theme: '#78350f', // Amber
+    color: '#f59e0b',
   }
 ];

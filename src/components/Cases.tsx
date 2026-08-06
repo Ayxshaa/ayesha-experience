@@ -1,45 +1,78 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { PROJECTS } from '@/constants/constants';
+import { PROJECTS, PROJECT_CATEGORIES } from '@/constants/constants';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Cases: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>('Frontend');
+
+  const visibleProjects = selectedCategory
+    ? PROJECTS.filter((project) => project.category === selectedCategory)
+    : [];
 
   useEffect(() => {
-    const items = containerRef.current?.querySelectorAll('.project-item');
-    if (!items) return;
-
-    items.forEach((item) => {
-      gsap.fromTo(item,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 90%',
-            toggleActions: 'play none none reverse'
+    const ctx = gsap.context(() => {
+      const items = containerRef.current?.querySelectorAll('.project-item');
+      items?.forEach((item) => {
+        gsap.fromTo(item,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            scrollTrigger: {
+              trigger: item,
+              start: 'top 90%',
+              toggleActions: 'play none none reverse'
+            }
           }
-        }
-      );
-    });
-  }, []);
+        );
+      });
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, [selectedCategory]);
 
   return (
     <section ref={containerRef} className="py-20 md:py-40 px-6 md:px-12 lg:px-20 bg-black">
       <div className="max-w-7xl mx-auto">
-        <header className="mb-12 md:mb-20 flex justify-between items-end border-b border-white/10 pb-6 md:pb-10">
-          <h2 className="font-syncopate text-lg md:text-3xl tracking-tight opacity-50">SELECTED CASES</h2>
-          {/* <span className="text-[9px] md:text-xs font-syncopate opacity-30 uppercase tracking-widest hidden sm:block">VIEW ALL PROJECTS</span> */}
+        <header className="mb-12 md:mb-20 border-b border-white/10 pb-6 md:pb-10">
+          <div className="flex justify-between items-end mb-8 md:mb-12">
+            <h2 className="font-syncopate text-lg md:text-3xl tracking-tight opacity-50">PROJECTS</h2>
+          </div>
+
+          <div className="flex flex-wrap gap-3 md:gap-4">
+            {PROJECT_CATEGORIES.map((category) => {
+              const isActive = selectedCategory === category;
+              return (
+                <button
+                  key={category}
+                  type="button"
+                  onClick={() => setSelectedCategory(isActive ? null : category)}
+                  className={`px-4 md:px-6 py-2 md:py-3 rounded-sm border text-[10px] md:text-xs font-syncopate tracking-widest uppercase transition-all duration-300 ${
+                    isActive
+                      ? 'border-white text-white opacity-100'
+                      : 'border-white/20 text-white opacity-40 hover:opacity-70'
+                  }`}
+                >
+                  {category}
+                </button>
+              );
+            })}
+          </div>
         </header>
 
         <div className="space-y-24 md:space-y-40">
-          {PROJECTS.map((project, index) => (
+          {!selectedCategory && (
+            <p className="text-center text-xs md:text-sm font-syncopate tracking-widest uppercase opacity-30 py-12">
+              Select a category to view projects
+            </p>
+          )}
+          {visibleProjects.map((project, index) => (
             <div
               key={project.id}
               className="project-item group relative cursor-pointer"
