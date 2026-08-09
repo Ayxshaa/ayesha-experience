@@ -6,7 +6,7 @@ export const SOCIAL_LINKS = {
   github: 'https://github.com/Ayxshaa',
 };
 
-export const PROJECT_CATEGORIES = ['Frontend', '3D', 'AI Design'] as const;
+export const PROJECT_CATEGORIES = ['Frontend', '3D', 'My Design and Ideas'] as const;
 
 export const PROJECTS: Project[] = [
   {
@@ -70,16 +70,31 @@ export const PROJECTS: Project[] = [
     githubLink: 'https://github.com/Ayxshaa/VideoGallery'
   },
   {
-    id: 'ai-design-demo',
-    title: 'AI Design Demo',
+    id: 'agggtm',
+    title: 'AGGGTM',
     year: '2025',
-    category: 'AI Design',
+    category: 'My Design and Ideas',
     description: [
-      'Placeholder for AI-assisted',
-      'design work — details',
-      'coming soon'
+      'A books website built with',
+      'frame-by-frame scroll-driven',
+      'animation'
     ],
     theme: '#78350f', // Amber
     color: '#f59e0b',
+    deployedLink: 'https://agggtm.netlify.app'
+  },
+  {
+    id: 'ashhjazz',
+    title: 'AshhJazz',
+    year: '2025',
+    category: 'My Design and Ideas',
+    description: [
+      'A cinematic jazz editorial',
+      'portfolio with a noir aesthetic,',
+      'built as a single-page Vue 3 app'
+    ],
+    theme: '#450a0a', // Noir red
+    color: '#f43f5e',
+    deployedLink: 'https://ashhjazz.netlify.app/'
   }
 ];

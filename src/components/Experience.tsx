@@ -12,6 +12,23 @@ const CAPABILITIES = [
   { id: '04', title: 'Creative Logic', description: 'Blending design thinking with clean code to solve real problems.' },
 ];
 
+const WORK_EXPERIENCE = [
+  {
+    company: 'Wavelaps',
+    period: 'Jun 2026 – Present',
+    role: 'Software Developer',
+    description: 'Now working as a Software Developer at Wavelaps, building products like WaveMining and Trading Cards, and developing websites for new clients.',
+    tech: ['JavaScript', 'React.js', 'HTML', 'CSS', 'GSAP'],
+  },
+  {
+    company: 'Wavelaps',
+    period: 'Sep 2025 – May 2026',
+    role: 'Frontend Developer Intern',
+    description: 'At Wavelaps, I worked on the main website and the XRCH Hackathon page, building smooth, interactive experiences with React. I created reusable components, added animations to bring the UI to life, and integrated NodeMailer for automated emails and form workflows. I also worked with Cloudflare to improve performance, security, and deployment reliability.',
+    tech: ['JavaScript', 'React.js', 'HTML', 'CSS', 'GSAP'],
+  },
+];
+
 const Experience: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -75,36 +92,38 @@ const Experience: React.FC = () => {
             <div className="w-12 h-[1px] bg-white/20 mt-4 " />
           </div>
 
-          <div className="exp-item group relative py-8 md:py-12 border-t border-white/5">
-            <div className="line absolute top-0 left-0 w-full h-[1px] bg-white/20 origin-left" />
-            <div className="content grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
-              <div className="md:col-span-3 space-y-1">
-                <h3 className="font-syncopate text-lg md:text-xl font-bold tracking-tight uppercase group-hover:text-blue-500 transition-colors duration-500">
-                  Wavelaps
-                </h3>
-                <span className="font-syncopate text-[10px] md:text-xs opacity-40 block tracking-wider">Sep 2025 – Present</span>
-              </div>
+          {WORK_EXPERIENCE.map((job) => (
+            <div key={job.period} className="exp-item group relative py-8 md:py-12 border-t border-white/5">
+              <div className="line absolute top-0 left-0 w-full h-[1px] bg-white/20 origin-left" />
+              <div className="content grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+                <div className="md:col-span-3 space-y-1">
+                  <h3 className="font-syncopate text-lg md:text-xl font-bold tracking-tight uppercase group-hover:text-blue-500 transition-colors duration-500">
+                    {job.company}
+                  </h3>
+                  <span className="font-syncopate text-[10px] md:text-xs opacity-40 block tracking-wider">{job.period}</span>
+                </div>
 
-              <div className="md:col-span-3">
-                <h4 className="font-syncopate text-xs md:text-sm font-bold opacity-70 uppercase tracking-widest text-blue-400/80">
-                  Frontend Developer
-                </h4>
-              </div>
+                <div className="md:col-span-3">
+                  <h4 className="font-syncopate text-xs md:text-sm font-bold opacity-70 uppercase tracking-widest text-blue-400/80">
+                    {job.role}
+                  </h4>
+                </div>
 
-              <div className="md:col-span-6 space-y-6">
-                <p className="text-sm md:text-lg font-light opacity-60 leading-relaxed group-hover:opacity-90 transition-opacity duration-500">
-                  At Wavelaps, I worked on the main website and the XRCH Hackathon page, building smooth, interactive experiences with React. I created reusable components, added animations to bring the UI to life, and integrated NodeMailer for automated emails and form workflows. I also worked with Cloudflare to improve performance, security, and deployment reliability.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  {['JavaScript', 'React.js', 'HTML', 'CSS', 'GSAP'].map((tech) => (
-                    <span key={tech} className="px-3 py-1 border border-white/10 rounded-full text-[9px] font-syncopate uppercase tracking-widest opacity-50 hover:opacity-100 hover:border-white/40 transition-all duration-300">
-                      {tech}
-                    </span>
-                  ))}
+                <div className="md:col-span-6 space-y-6">
+                  <p className="text-sm md:text-lg font-light opacity-60 leading-relaxed group-hover:opacity-90 transition-opacity duration-500">
+                    {job.description}
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    {job.tech.map((tech) => (
+                      <span key={tech} className="px-3 py-1 border border-white/10 rounded-full text-[9px] font-syncopate uppercase tracking-widest opacity-50 hover:opacity-100 hover:border-white/40 transition-all duration-300">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
 
         
