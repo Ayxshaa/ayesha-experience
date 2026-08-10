@@ -7,6 +7,7 @@ export interface Project {
   description: string[];
   theme: string;
   color: string;
+  image?: string;
   deployedLink?: string;
   githubLink?: string;
 }

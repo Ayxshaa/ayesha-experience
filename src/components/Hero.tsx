@@ -65,10 +65,10 @@ const Hero: React.FC = () => {
         >
           <div className="text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-xl text-center lg:text-left">
             <p className="mb-2 md:mb-4 opacity-80">
-              We are a multidisciplinary studio at the intersection of art, design and technology.
+              I create for brands who refuse to be ordinary.
             </p>
             <p className="opacity-50 text-xs sm:text-sm md:text-base italic font-medium tracking-wide">
-              Crafting spatial experiences that breathe on the web.
+              Turning ideas into experiences worth remembering.
             </p>
           </div>
 

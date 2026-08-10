@@ -152,11 +152,11 @@ const Cases: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="relative w-full lg:w-[40%] aspect-[4/3] sm:aspect-video lg:aspect-square overflow-hidden group-hover:scale-105 transition-transform duration-1000 ease-out order-1 lg:order-2 rounded-sm">
+                <div className="relative w-full lg:w-[40%] aspect-[4/3] sm:aspect-video lg:aspect-square overflow-hidden group-hover:scale-105 transition-transform duration-1000 ease-out order-1 lg:order-2 rounded-sm bg-black">
                   <img
-                    src={`https://picsum.photos/seed/${project.id}/800/1000`}
+                    src={project.image ?? `https://picsum.photos/seed/${project.id}/800/1000`}
                     alt={project.title}
-                    className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-1000"
+                    className={`w-full h-full transition-all duration-1000 ${project.image ? 'object-contain' : 'object-cover'}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60" />
 

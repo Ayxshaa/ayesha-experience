@@ -1,5 +1,11 @@
 
 import { Project } from '@/types';
+import a4zoneImage from '@/assets/images/a4zone.webp';
+import floweventImage from '@/assets/images/flowevent.webp';
+import portfolioImage from '@/assets/images/portfolio.webp';
+import urgalleryImage from '@/assets/images/urgallery.webp';
+import agggtmImage from '@/assets/images/agggtm.webp';
+import ashhjazzImage from '@/assets/images/ashhjazz.webp';
 
 export const SOCIAL_LINKS = {
   linkedin: 'https://www.linkedin.com/in/ayesha-qureshi-a67414344/',
@@ -21,6 +27,7 @@ export const PROJECTS: Project[] = [
     ],
     theme: '#6b21a8', // Purple
     color: '#a855f7',
+    image: portfolioImage,
     deployedLink: 'https://ayeshaportfoliooo.netlify.app/',
     githubLink: 'https://github.com/Ayxshaa/portfolio-ash'
   },
@@ -36,6 +43,7 @@ export const PROJECTS: Project[] = [
     ],
     theme: '#1e3a8a', // Blue
     color: '#3b82f6',
+    image: a4zoneImage,
     deployedLink: 'https://a4zone.netlify.app/',
     githubLink: 'https://github.com/Ayxshaa/chat-app'
   },
@@ -51,6 +59,7 @@ export const PROJECTS: Project[] = [
     ],
     theme: '#064e3b', // Green
     color: '#10b981',
+    image: floweventImage,
     deployedLink: 'https://flowevent.netlify.app/',
     githubLink: 'https://github.com/Ayxshaa/EDC-LandingPage'
   },
@@ -66,6 +75,7 @@ export const PROJECTS: Project[] = [
     ],
     theme: '#991b1b', // Red
     color: '#ef4444',
+    image: urgalleryImage,
     deployedLink: 'https://ayxshaa.github.io/VideoGallery/',
     githubLink: 'https://github.com/Ayxshaa/VideoGallery'
   },
@@ -81,6 +91,7 @@ export const PROJECTS: Project[] = [
     ],
     theme: '#78350f', // Amber
     color: '#f59e0b',
+    image: agggtmImage,
     deployedLink: 'https://agggtm.netlify.app'
   },
   {
@@ -95,6 +106,7 @@ export const PROJECTS: Project[] = [
     ],
     theme: '#450a0a', // Noir red
     color: '#f43f5e',
+    image: ashhjazzImage,
     deployedLink: 'https://ashhjazz.netlify.app/'
   }
 ];
