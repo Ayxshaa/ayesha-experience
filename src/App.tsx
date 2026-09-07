@@ -16,7 +16,7 @@ const App: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const { scrollToElement } = useLenis();
-  
+
   const heroRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
@@ -29,7 +29,7 @@ const App: React.FC = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const sectionRefs: { [key: string]: React.RefObject<HTMLDivElement> } = {
+    const sectionRefs: { [key: string]: React.RefObject<HTMLDivElement | null> } = {
       hero: heroRef,
       about: aboutRef,
       experience: experienceRef,
@@ -50,19 +50,19 @@ const App: React.FC = () => {
     <NavigationContext.Provider value={navigationContextValue}>
       <div className="relative min-h-screen w-full overflow-hidden bg-black text-white">
         {loading && <Loader />}
-        
+
         <Navigation />
         <SoundToggle isMuted={isMuted} onToggle={() => setIsMuted(!isMuted)} />
 
         {/* WebGL Background */}
-        <div className="fixed inset-0 z-0 pointer-events-none">
-          <Canvas 
-            shadows 
+        <div className="fixed inset-0 z-0">
+          <Canvas
+            shadows
             camera={{ position: [0, 0, 5], fov: 45 }}
             dpr={[1, 2]}
           >
             <Suspense fallback={null}>
-              <Scene />
+              <Scene introReady={!loading} />
             </Suspense>
           </Canvas>
         </div>
